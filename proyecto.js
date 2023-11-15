@@ -24,11 +24,12 @@ while (opcion != 5){
             if (decision == 1){
                     alert ('Te dije que no se puede agregar todaviaaa!!');
             }
-            else{
-                if (decision ==2){
+            else if (decision ==2){
                     alert ('Gran decisión, como dije antes, no se puede agregar nada todavía.');
-                }
             }
+            else {
+                    alert("Opción incorrecta");
+                }
         }
     }
 
@@ -45,10 +46,11 @@ while (opcion != 5){
             if (decision == 1){
                     alert ('Te dije que no se puede eliminar todaviaaa!!');
             }
-            else{
-                if (decision == 2){
+            else if (decision == 2){
                     alert ('Gran decisión, como dije antes, no se puede eliminar nada todavía.');
                 }
+            else {
+                alert("Opción incorrecta");
             }
         }
     }
@@ -66,10 +68,11 @@ while (opcion != 5){
             if (decision == 1){
                     alert ('Te dije que no se puede modificar todaviaaa!!');
             }
-            else{
-                if (decision == 2){
+            else if (decision == 2){
                     alert ('Gran decisión, como dije antes, no se puede modificar nada todavía.');
                 }
+            else {
+                alert("Opción incorrecta");
             }
         }
     }
