@@ -3,7 +3,7 @@ function opcionIncorrecta(){
 }
 
 function saludoBienvenida(nombre){
-    alert(`Bienvenido, ${nombre}`)
+    alert(`Bienvenido/a, ${nombre}`)
 }
 
 function saludoDespedida(nombre){
