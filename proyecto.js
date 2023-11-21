@@ -1,3 +1,19 @@
+function opcionIncorrecta(){
+    alert("Opción incorrecta");
+}
+
+function saludoBienvenida(nombre){
+    alert(`Bienvenido, ${nombre}`)
+}
+
+function saludoDespedida(nombre){
+    alert(`Nos vemos pronto, ${nombre}`)
+}
+
+nombre = prompt ("Ingrese su nombre: ")
+
+saludoBienvenida(nombre)
+
 let opcion;
 while (opcion != 5){
     opcion = +prompt ('Elija una opción:' + '\n'
@@ -28,7 +44,7 @@ while (opcion != 5){
                     alert ('Gran decisión, como dije antes, no se puede agregar nada todavía.');
             }
             else {
-                    alert("Opción incorrecta");
+                opcionIncorrecta();
                 }
         }
     }
@@ -50,7 +66,7 @@ while (opcion != 5){
                     alert ('Gran decisión, como dije antes, no se puede eliminar nada todavía.');
                 }
             else {
-                alert("Opción incorrecta");
+                opcionIncorrecta();
             }
         }
     }
@@ -72,12 +88,12 @@ while (opcion != 5){
                     alert ('Gran decisión, como dije antes, no se puede modificar nada todavía.');
                 }
             else {
-                alert("Opción incorrecta");
+                opcionIncorrecta();
             }
         }
     }
 
     if (opcion == 5){
-        alert ("Que tengas buenos días, tardes y noches. Adiós!");
+        saludoDespedida(nombre);
     }
 }
