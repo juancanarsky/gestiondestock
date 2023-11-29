@@ -9,9 +9,31 @@ function saludoBienvenida(nombre){
 function saludoDespedida(nombre){
     alert(`Nos vemos pronto, ${nombre}`)
 }
+// Necesito que solo me acepte números
+function seguirAgregando(){
+    productoProducto = prompt("Ingrese el nombre del producto a agregar:");
+    while (!productoProducto || !productoProducto.trim()) {
+        productoProducto = prompt("No se permiten campos vacíos, por favor ingrese producto a agregar:");
+    }
+    categoriaProducto = prompt ("Ingrese la categoria del producto a agregar: ");
+    while (!categoriaProducto || !categoriaProducto.trim()) {
+        categoriaProducto = prompt("No se permiten campos vacíos, por favor ingrese la categoría del producto a agregar:");
+    }
+    stockProducto = +prompt ("Ingrese el stock del producto a agregar: ");
+    while (!stockProducto || !stockProducto.trim()) {
+        stockProducto = +prompt("Solo se permiten números, por favor ingrese el stock del producto a agregar:");
+    }
+    precioProducto = +prompt ("Ingrese el precio del producto a agregar: ");
+    while (!precioProducto || !precioProducto.trim()) {
+        precioProducto = +prompt("Solo se permiten números, por favor ingrese el precio del producto a agregar:");
+    }
+    nuevoProducto = new Producto(productoProducto, categoriaProducto, stockProducto, precioProducto);
+    productos.push(nuevoProducto);
+    alert ('Producto agregado correctamente.');
+}
 
 function buscarProducto(productos, busqueda) {
-    const productoBuscado = productos.filter((item) => item.producto.includes(busqueda));
+    const productoBuscado = productos.filter((item) => item.producto.toLowerCase().includes(busqueda.toLowerCase()));
     if (productoBuscado.length > 0){
     for (const producto of productoBuscado) {
         alert(
@@ -59,16 +81,33 @@ while (opcion != 6){
     }
 
     if (opcion == 2){
-        prompt ("Ingrese el producto a agregar: ");
-        alert ('Aún no se puede agregar productos');
+        let productoProducto = prompt("Ingrese el nombre del producto a agregar:");
+        while (!productoProducto || !productoProducto.trim()) {
+            productoProducto = prompt("No se permiten campos vacíos, por favor ingrese producto a agregar:");
+        }
+        let categoriaProducto = prompt ("Ingrese la categoria del producto a agregar: ");
+        while (!categoriaProducto || !categoriaProducto.trim()) {
+            categoriaProducto = prompt("No se permiten campos vacíos, por favor ingrese producto a agregar:");
+        }
+            let stockProducto = +prompt ("Ingrese el stock del producto a agregar: ");
+        while (!stockProducto || !stockProducto.trim()) {
+            stockProducto = prompt("No se permiten campos vacíos, por favor ingrese producto a agregar:");
+        }
+            let precioProducto = +prompt ("Ingrese el precio del producto a agregar: ");
+        while (!precioProducto || !precioProducto.trim()) {
+            precioProducto = prompt("No se permiten campos vacíos, por favor ingrese producto a agregar:");
+        }
+            let nuevoProducto = new Producto(productoProducto, categoriaProducto, stockProducto, precioProducto);
+        productos.push(nuevoProducto);
+        alert ('Producto agregado correctamente.');
         let decision = 0
         while(decision != 1 && decision != 2){
             decision = +prompt ('Quiere agregar otro producto?' + '\n' + '"1" - Sí' + '\n' + '"2" - No');
             if (decision == 1){
-                    alert ('Te dije que no se puede agregar todaviaaa!!');
+                seguirAgregando();
             }
             else if (decision ==2){
-                    alert ('Volviendo al menú...');
+                alert ('Volviendo al menú...');
             }
             else {
                 opcionIncorrecta();
@@ -90,7 +129,7 @@ while (opcion != 6){
                     alert ('Te dije que no se puede eliminar todaviaaa!!');
             }
             else if (decision == 2){
-                    alert ('Volviendo al menú...');
+                alert ('Volviendo al menú...');
                 }
             else {
                 opcionIncorrecta();
@@ -109,10 +148,10 @@ while (opcion != 6){
         while(decision != 1 && decision != 2){
             decision = +prompt ('Quiere modificar otro producto?' + '\n' + '"1" - Sí' + '\n' + '"2" - No');
             if (decision == 1){
-                    alert ('Te dije que no se puede modificar todaviaaa!!');
+                alert ('Te dije que no se puede modificar todaviaaa!!');
             }
             else if (decision == 2){
-                    alert ('Volviendo al menú...');
+                alert ('Volviendo al menú...');
                 }
             else {
                 opcionIncorrecta();
