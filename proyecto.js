@@ -15,7 +15,8 @@ function saludoDespedida(nombre){
 }
 
 function recorrerLista(){
-    productos.forEach((articulo, index) => {console.log(articulo.producto, index)})
+    productos.forEach((articulo, index) => {console.log(articulo.producto, articulo.categoria, articulo.stock, articulo.precio, index)})
+    setTimeout(() => {}, 10)
 }
 
 function seguirAgregando(productoProducto, categoriaProducto, stockProducto, precioProducto) {
@@ -94,6 +95,7 @@ while (opcion != 6){
             let nuevoProducto = seguirAgregando(productoProducto, categoriaProducto, stockProducto, precioProducto);
             productos.push(new Producto(nuevoProducto.producto, nuevoProducto.categoria, nuevoProducto.stock, nuevoProducto.precio));
             console.log(nuevoProducto);
+            setTimeout(() => {}, 10);
             let entradaValida = false;
             while (!entradaValida) {
                 decision = +prompt('¿Quiere agregar otro producto?' + '\n' + '"1" - Sí' + '\n' + '"2" - No');
@@ -110,17 +112,13 @@ while (opcion != 6){
     }
 
     if (opcion == 3){
-        +prompt ('"1" - Coca-Cola 2,25 lts $1000' + '\n'
-        + '"2" - Sprite 2,25 lts $1000' + '\n'
-        + '"3" - Fanta 2,25 lts $1000' + '\n'
-        + '"4" - Lays 40 grs $700' + '\n'
-        + '"5" - Conitos 3D 40grs $500' + '\n' + 'Ingrese el producto a eliminar: ');
-        alert ('Aún no se puede eliminar productos');
+        recorrerLista();
+        +prompt ('Ingrese el producto a eliminar: ');
         let decision = 0
         while(decision != 1 && decision != 2){
             decision = +prompt ('Quiere eliminar otro producto?' + '\n' + '"1" - Sí' + '\n' + '"2" - No');
             if (decision == 1){
-                    alert ('Te dije que no se puede eliminar todaviaaa!!');
+                alert ('Te dije que no se puede eliminar todaviaaa!!');
             }
             else if (decision == 2){
                 volverAlMenu();
@@ -132,12 +130,8 @@ while (opcion != 6){
     }
 
     if (opcion == 4){
-        +prompt ('"1" - Coca-Cola 2,25 lts $1000' + '\n'
-        + '"2" - Sprite 2,25 lts $1000' + '\n'
-        + '"3" - Fanta 2,25 lts $1000' + '\n'
-        + '"4" - Lays 40 grs $700' + '\n'
-        + '"5" - Conitos 3D 40grs $500' + '\n' + 'Ingrese el producto a modificar: ');
-        alert ('Aún no se puede modificar productos');
+        recorrerLista();
+        +prompt ('Ingrese el producto a modificar: ');
         let decision = 0
         while(decision != 1 && decision != 2){
             decision = +prompt ('Quiere modificar otro producto?' + '\n' + '"1" - Sí' + '\n' + '"2" - No');
